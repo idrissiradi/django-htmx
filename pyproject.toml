@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "django-htmx-slippers"
+version = "0.1.0"
+description = ""
+authors = ["idrissiradi <idrissiradi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.4"
+django-template-partials = "^24.2"
+slippers = "^0.6.2"
+django-htmx = "^1.17.3"
+gunicorn = "^21.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

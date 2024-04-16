@@ -1,0 +1,52 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+        <script src="{% static 'htmx.min.js' %}" defer="defer"></script>
+        <script src="{% static 'debug.js' %}" defer="defer"></script>
+        <title>Document</title>
+    </head>
+
+    <body>
+        {% partialdef test-partial %}
+            {% if email %}
+                {% #card %}
+                <p class="text-sm text-gray-500">{{ email|default:"" }}</p>
+                {% /card %}
+            {% endif %}
+        {% endpartialdef %}
+
+        <ul role="list" id="card" class="divide-y divide-gray-200">
+            {% partial test-partial %}
+        </ul>
+
+        <div>
+            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+            <div class="relative mt-2 rounded-md shadow-sm">
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="block w-auto rounded-md border-0 py-1.5 pr-10 text-indigo-900 ring-1 ring-inset ring-indigo-300 placeholder:text-indigo-300 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                    placeholder="you@example.com"
+                    aria-invalid="true"
+                />
+            </div>
+        </div>
+
+        <button
+            hx-post="{% url 'core:index_post' %}"
+            hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+            hx-target="#card"
+            hx-trigger="click"
+            hx-swap="beforeend"
+            hx-include="[name='email']"
+        >
+            Add
+        </button>
+    </body>
+</html>
