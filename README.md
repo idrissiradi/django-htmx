@@ -16,4 +16,4 @@
 
 `pnpm install`
 
-`pnpm dlx tailwindcss -i ./static/styles/input.css -o ./static/styles/output.css --watch`
+`pnpm dlx tailwindcss -i ./static/styles/input.css -o ./static/styles/output.css` or `pnpm dlx tailwindcss -i ./static/styles/input.css -o ./static/styles/output.css --watch` 
