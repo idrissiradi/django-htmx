@@ -163,3 +163,5 @@ cython_debug/
 pnpm-lock.yaml
 node_modules
 .vscode
+poetry.lock
+bun.*

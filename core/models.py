@@ -24,7 +24,6 @@ class Event(models.Model):
     organizer = models.ForeignKey(
         Organizer, on_delete=models.CASCADE, related_name="events"
     )
-    image = models.ForeignKey("Image", on_delete=models.SET_NULL, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

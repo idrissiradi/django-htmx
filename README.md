@@ -14,6 +14,6 @@
 
 ## Tailwind CSS Setup
 
-`pnpm install`
+`bun install`
 
-`pnpm dlx tailwindcss -i ./static/styles/input.css -o ./static/styles/output.css` or `pnpm dlx tailwindcss -i ./static/styles/input.css -o ./static/styles/output.css --watch` 
+`bunx tailwindcss -i ./static/styles/input.css -o ./static/styles/output.css` or `pnpm dlx tailwindcss -i ./static/styles/input.css -o ./static/styles/output.css --watch` 
